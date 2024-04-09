@@ -109,3 +109,36 @@ $colorBrightness = ColorRandomizer::calculateBrightness(rgbOrHex: '#0548e6', typ
 // returns 69
 
 ```
+
+#### Extract Red, Green, Blue From Full RGB
+Extract Red, Green And Blue From A Full RGB Through Just Line Of code.
+
+**Example Usage:**
+```php
+$rgbArray = ColorRandomizer::extractRGBComponents(colorString: "rgb(5, 91, 230)") // returns ['r' => 5, 'g' => 91, 'b' => 230'];
+```
+
+#### Get Color Code From Color Name
+We support `450+ Color` and search through them to get you the most Accurate color code in accordance of color name.
+
+```php
+$colorCode = ColorRandomizer::getCodesFromHtmlColors(hex: true, name: 'dandelion') // returns #F0E130;
+```
+
+#### Get Most Matched Color Name From Color Code
+The Best Color Name Finding function with Color code over 95% Accurate Results.
+
+```php
+$colorName = ColorRandomizer::getNearestNameFromCode(hex: true, rgbOrHex: '#05e676'); // returns 'spring green'
+// You can use ucwords($colorName) to format the words 1st letter to uppercase
+```
+
+#### Get Similar Colors
+The Similar Colors Function Always you to Get Similar Colors/Colors Related to the Color you give, ('Disclaimer For Custom Colors, For Fullfilling Colors Amount you may use custom color but it may make your web page a lot slower. So Not using the Custom Colors is preffered')
+
+```php
+$similarColors = ColorRandomizer::getSimilarColors(rgbOrHex: '#FFB7C5', goalAmount: 7, hex: true, maxDifference: 100, minDifference: 0.5, allowCustomColors: false);
+/* It'll return an array containing other arrays like,
+[["name" => "Carnation Pink", "hex" => "FFA6C9", "rgb" => "rgb(255, 166, 201)", "difference" => 17.464249196573] ... more]
+*/ 
+```
