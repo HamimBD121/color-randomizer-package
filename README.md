@@ -95,7 +95,7 @@ $rgb = ColorRandomizer::hexToRgb(hex: '#055be6');
 // returns rgb(5, 91, 230)
 ```
 
-#### Calculate Brightness And Difference Beetwen 2 Colors
+### Calculate Brightness And Difference Beetwen 2 Colors
 We Provide 90%+ Accurate Results On the calculations. Easy & The Best Way for color calculation.
 
 **Example Usage:**
@@ -110,7 +110,7 @@ $colorBrightness = ColorRandomizer::calculateBrightness(rgbOrHex: '#0548e6', typ
 
 ```
 
-#### Extract Red, Green, Blue From Full RGB
+### Extract Red, Green, Blue From Full RGB
 Extract Red, Green And Blue From A Full RGB Through Just Line Of code.
 
 **Example Usage:**
@@ -118,14 +118,14 @@ Extract Red, Green And Blue From A Full RGB Through Just Line Of code.
 $rgbArray = ColorRandomizer::extractRGBComponents(colorString: "rgb(5, 91, 230)") // returns ['r' => 5, 'g' => 91, 'b' => 230'];
 ```
 
-#### Get Color Code From Color Name
+### Get Color Code From Color Name
 We support `450+ Color` and search through them to get you the most Accurate color code in accordance of color name.
 
 ```php
 $colorCode = ColorRandomizer::getCodesFromHtmlColors(hex: true, name: 'dandelion') // returns #F0E130;
 ```
 
-#### Get Most Matched Color Name From Color Code
+### Get Most Matched Color Name From Color Code
 The Best Color Name Finding function with Color code over 95% Accurate Results.
 
 ```php
@@ -133,7 +133,7 @@ $colorName = ColorRandomizer::getNearestNameFromCode(hex: true, rgbOrHex: '#05e6
 // You can use ucwords($colorName) to format the words 1st letter to uppercase
 ```
 
-#### Get Similar Colors
+### Get Similar Colors
 The Similar Colors Function Always you to Get Similar Colors/Colors Related to the Color you give, ('Disclaimer For Custom Colors, For Fullfilling Colors Amount you may use custom color but it may make your web page a lot slower. So Not using the Custom Colors is preffered')
 
 ```php
