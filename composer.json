@@ -14,9 +14,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {
-        "mjaschen/phpcolors": "^1.2"
-    },
+    "require": {},
     "extra": {
         "laravel": {
             "providers": [
