@@ -142,3 +142,12 @@ $similarColors = ColorRandomizer::getSimilarColors(rgbOrHex: '#FFB7C5', goalAmou
 [["name" => "Carnation Pink", "hex" => "FFA6C9", "rgb" => "rgb(255, 166, 201)", "difference" => 17.464249196573] ... more]
 */ 
 ```
+
+### All Colors Page Configuration
+Configure That The All Colors Page is Visible And The Route Of the Page,
+
+**Configure On ENV:**
+```php
+COLOR_RANDOMIZER_COLOR_PAGE_ROUTE = '/all-colors'
+COLOR_RANDOMIZER_COLOR_PAGE = true
+```
