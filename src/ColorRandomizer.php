@@ -50,10 +50,18 @@ class ColorRandomizer
         All the Colors Staticaly 
     */
 
-    public static function getColors()
+    public static function getColors($formatNames = true)
     {
-        return self::$colors;
-    }
+        $colors = self::$colors;
+    
+        if ($formatNames == true) {
+            foreach ($colors as $key => $color) {
+                $colors[$key]['name'] = ucwords($color['name']);
+            }
+        }
+    
+        return $colors;
+    }    
 
     public static function colorDifference($color1, $color2, $hex = false)
     {
@@ -152,12 +160,24 @@ class ColorRandomizer
 
 
     // Make RGB Color Codes to Hex
-    public static function rgbToHex($r, $g, $b): string
+    public static function rgbToHex($r = null, $g = null, $b = null, $fullRGB = null): string
     {
+        if ($fullRGB) {
+            $extractedRGB = self::extractRGBComponents($fullRGB);
+            $r = $extractedRGB['r'];
+            $g = $extractedRGB['g'];
+            $b = $extractedRGB['b'];
+
+        } elseif ($r && $g && $b) {
+            
+        } else {
+            throw new \InvalidArgumentException("Please Provide Separate r, g, b, or fullRGB. Please Make Sure You have specified argument name, Github Repo: https://github.com/HamimBD121/color-randomizer-package/");
+        } 
+        
         $r = max(0, min(255, $r));
         $g = max(0, min(255, $g));
         $b = max(0, min(255, $b));
-    
+        
         $hexR = dechex($r);
         $hexG = dechex($g);
         $hexB = dechex($b);
@@ -169,12 +189,12 @@ class ColorRandomizer
         return (string)"#$hexR$hexG$hexB";
     }
 
-    public static function getMultipleColors($colorsAmount = 4, $hex = false, $minBrightness = 30, $maxBrightness = 255, $withMostMatchedName = false)
+    public static function getMultipleColors($colorsAmount = 4, $hex = false, $minBrightness = 30, $maxBrightness = 255, $withMostMatchedName = false, $formattedName = true)
     {
         $colors = [];
 
         for ($i = 1; $i <= $colorsAmount; $i++) {
-            $colors[] = self::getSingleColor($hex, $minBrightness, $maxBrightness, $withMostMatchedName);
+            $colors[] = self::getSingleColor($hex, $minBrightness, $maxBrightness, $withMostMatchedName, $formattedName);
         }
 
         return $colors;
@@ -209,7 +229,7 @@ class ColorRandomizer
         $components = explode(",", $cleanedString);
     
         if (count($components) !== 3) {
-            throw new Exception("Invalid color format. Expected format: 'r, g, b'.");
+            throw new Exception("Invalid color format. Expected format: 'r, g, b'.,  Github Repo: https://github.com/HamimBD121/color-randomizer-package/");
         }
     
         $red = intval($components[0]);
@@ -217,7 +237,7 @@ class ColorRandomizer
         $blue = intval($components[2]);
     
         if ($red < 0 || $red > 255 || $green < 0 || $green > 255 || $blue < 0 || $blue > 255) {
-            throw new Exception("Invalid color component values. Expected range: 0-255.");
+            throw new Exception("Invalid color component values. Expected range: 0-255. - Github Repo: https://github.com/HamimBD121/color-randomizer-package/");
         }
     
         return ['r' => $red, 'g' => $green, 'b' => $blue];
