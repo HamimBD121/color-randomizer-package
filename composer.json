@@ -1,0 +1,28 @@
+{
+    "name": "byteforge/color-randomizer",
+    "description": "This could be used in various cases of color. Amzing things like generating random colors and many more.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Byteforge\\ColorRandomizer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ByteForge"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "mjaschen/phpcolors": "^1.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ByteForge\\ColorRandomizer\\ColorRandomizerServiceProvider"
+            ],
+            "aliases": {}
+        }
+    }
+}
