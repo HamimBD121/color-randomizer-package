@@ -83,14 +83,29 @@ We provide the best and easiest way to convert RGB To Hex and Hex To RGB.
 // RGB To Hex
 
 // 1st Way
-$hex = ColorRandomizer::rgbToHex(fullRGB: "5, 91, 230"); // Make Sure You Specify The Argument Name Like 'fullRGB: $myRGB'
+$hex = ColorRandomizer::rgbToHex(fullRGB: "5, 91, 230"); // Make Sure You Specify The Argument Name Like 'fullRGB: $myRGB'. You can also give the RGB like rgb(5, 91, 230),
 // Returns #055be6
 
 // 2nd Way
-$hex = ColorRandomizer::rgbToHex(r: 5, g: 91, b: 230); // Make Sure You Specify The Argument Name Like 'r:, g: and b:'
+$hex = ColorRandomizer::rgbToHex(r: 5, g: 91, b: 230); // Make Sure You Specify The Argument Name Like 'r:, g: and b:',
 // Returns #055be6
 
 // Hex To RGB
 $rgb = ColorRandomizer::hexToRgb(hex: '#055be6');
 // returns rgb(5, 91, 230)
+```
+
+#### Calculate Brightness And Difference Beetwen 2 Colors
+We Provide 90%+ Accurate Results On the calculations. Easy & The Best Way for color calculation.
+
+**Example Usage:**
+```php
+// Get Color Difference Between 2 colors
+$colorDifference = ColorRandomizer::colorDifference(color1: '#0548e6', color2: '#05a6e6', hex: true); // Hex refers that your color1 and color2 is Hex or RGB.
+// returns 94. Similar Colors Threshold Could Be 130
+
+// Get Color Brightness
+$colorBrightness = ColorRandomizer::calculateBrightness(rgbOrHex: '#0548e6', type: 'hex'); // type must be hex or rgb, Its for verifying your Color code Type.
+// returns 69
+
 ```
