@@ -15,6 +15,14 @@ Color Randomizer is a comprehensive toolkit for color manipulation and generatio
 - Discovering similar or complementary colors
 - Showcasing all supported colors in an aesthetically pleasing manner
 
+## Installation
+You Can Install The Package via Composer,
+
+```bash
+composer require byteforge/color-randomizer
+```
+You only require laravel^6 to effortlessly install the Color Randomizer Package. No additional dependencies are necessary; just stick to the default Laravel setup.
+
 ## Usage Guidelines
 
 ### Generate a Single Random Color
@@ -37,8 +45,8 @@ $color = ColorRandomizer::getSingleColor($hex = true, $minBrightness = 30, $maxB
 
 #### Parameters Explained:
 
-- $hex: Determines the format of the returned color code. true for hex format, false for RGB format.
-- $minBrightness & $maxBrightness: Control the brightness of the generated color, where a higher value results in a lighter color, and a lower value results in a darker color. Note: $maxBrightness should not exceed 255.
-- $withMostMatchedName: When set to true, the function returns an array with name and color_code, providing the closest matched color name. When false, only the color code is returned as a string.
-- $formattedName: Specifies the format of the returned color name when $withMostMatchedName is true. true for a formatted name (e.g., 'Alice Blue'), false for the raw name (e.g., 'alice blue').
+- `$hex : Determines the format of the returned color code. true for hex format, false for RGB format.
+- `$minBrightness & $maxBrightnes`s: Control the brightness of the generated color, where a higher value results in a lighter color, and a lower value results in a darker color. Note: $maxBrightness should not exceed 255.
+- `$withMostMatchedName`: When set to true, the function returns an array with name and color_code, providing the closest matched color name. When false, only the color code is returned as a string.
+- `$formattedName`: Specifies the format of the returned color name when $withMostMatchedName is true. true for a formatted name (e.g., 'Alice Blue'), false for the raw name (e.g., 'alice blue').
 By leveraging these features, users can easily incorporate dynamic color functionalities into their projects, enhancing aesthetics and user experience.
