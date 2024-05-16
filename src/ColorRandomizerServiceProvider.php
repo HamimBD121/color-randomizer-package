@@ -12,9 +12,9 @@ class ColorRandomizerServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadRoutesFrom(__DIR__.'\routes\web.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
-        $this->loadViewsFrom(__DIR__.'\resources\views', 'color-randomizer');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'color-randomizer');
 
     }
 
